@@ -1,11 +1,11 @@
 constants camo 0.169 0.3553	0.6545 0.14	0.34 0.82 0.619228 0.131288 0.316228
 shading phong
 push
-move 170 200 25
-scale 30 30 30
+move 190 200 25
+scale 25 25 25
 rotate x -110
 rotate z 180
-rotate y 120
+rotate y 240
 mesh camo :thing
 display
 
