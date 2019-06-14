@@ -5,7 +5,7 @@ move 170 200 25
 scale 30 30 30
 rotate x -110
 rotate z 180
-rotate y 60
+rotate y 120
 mesh camo :thing
 display
 
