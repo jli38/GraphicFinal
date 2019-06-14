@@ -3,8 +3,8 @@ shading phong
 push
 move 250 100 0
 scale 20 20 20
-rotate x -90
-rotate z 180 
+rotate x -65
+rotate z 100 
 mesh jade :thing
 display
 
