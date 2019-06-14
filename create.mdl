@@ -3,8 +3,6 @@ shading phong
 push
 move 170 200 25
 scale 30 30 30
-rotate x 30
-rotate z 30 
 mesh camo :thing
 display
 
