@@ -1,5 +1,7 @@
 # Graphics Final Project
-## Victor Lin Pd. 5
-## Features:
-1) Mesh
-2) Shading
+## Jackie Li
+## Team 10% Juice
+
+## Current Features:
+1. Mesh
+2. Shading
