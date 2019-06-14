@@ -108,6 +108,10 @@ def run(filename):
     mkdir('anim')
     ctr = 0
 
+    shading = None
+    if 'shading' in symbols:
+        shading = symbols['shading'][1]
+
     for frame in frames:
         tmp = new_matrix()
         ident( tmp )
@@ -128,14 +132,22 @@ def run(filename):
             args = command['args']
             knob_value = 1
 
-            if c == 'box':
+            if c == 'mesh':
+                if command['constants']:
+                    reflect = command['constants']
+                add_obj(tmp,args[0])
+                matrix_mult(stack[-1],tmp)
+                draw_polygons(tmp,screen,zbuffer,view,ambient,light,symbols,reflect,shading)
+                tmp = []
+                reflect = '.white'
+            elif c == 'box':
                 if command['constants']:
                     reflect = command['constants']
                 add_box(tmp,
                         args[0], args[1], args[2],
                         args[3], args[4], args[5])
                 matrix_mult( stack[-1], tmp )
-                draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect)
+                draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect,shading)
                 tmp = []
                 reflect = '.white'
             elif c == 'sphere':
@@ -144,7 +156,7 @@ def run(filename):
                 add_sphere(tmp,
                            args[0], args[1], args[2], args[3], step_3d)
                 matrix_mult( stack[-1], tmp )
-                draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect)
+                draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect,shading)
                 tmp = []
                 reflect = '.white'
             elif c == 'torus':
@@ -153,7 +165,7 @@ def run(filename):
                 add_torus(tmp,
                           args[0], args[1], args[2], args[3], args[4], step_3d)
                 matrix_mult( stack[-1], tmp )
-                draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect)
+                draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect,shading)
                 tmp = []
                 reflect = '.white'
             elif c == 'line':
