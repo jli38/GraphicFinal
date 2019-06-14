@@ -1,9 +1,10 @@
 constants jade 0.169 0.3553	0.6545 0.14	0.34 0.82 0.619228 0.131288 0.316228
 shading phong
 push
-move 250 100 0
+move 175 80 20
 scale 20 20 20
 rotate x -65
+rotate y 75
 rotate z 100 
 mesh jade :thing
 display
